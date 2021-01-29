@@ -27,6 +27,10 @@ Route::get('/blank',  function () {
 Route::get('/',  function () {
     return view('tugas_laravel_2.index');
 });
-Route::get('/data-tables',  function () {
-    return view('tugas_laravel_2.datatables');
-});
+Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::get('/pertanyaan/create', 'PertanyaanController@create' );
+Route::post('/pertanyaan', 'PertanyaanController@store' );
+Route::get('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@show');
+Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit');
+Route::put('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@update');
+Route::delete('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@destroy');
